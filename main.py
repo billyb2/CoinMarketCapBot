@@ -51,9 +51,13 @@ currencies = {
 
 }
 
-historicalData = open("data.txt", "a")
-historicalData.write(json.dumps(currencies) + "\n")
-historicalData.close()
+def logPriceData():
+    historicalData = open("data.txt", "a")
+    historicalData.write(json.dumps(currencies) + "\n")
+    historicalData.close()
+    print(json.dumps(currencies))
+    threading.Timer(60, logPriceData).start()
 
 
-print(currencies)
+logPriceData()
+
