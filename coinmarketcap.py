@@ -1,9 +1,7 @@
 def convert(cryptocurrency, amount):
-  
-    #This example uses Python 2.7 and the python-request library.
-
     from requests import Request, Session
     from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+    from credentials import api_key
     import json
 
     url = 'https://pro-api.coinmarketcap.com/v1/tools/price-conversion'
@@ -14,7 +12,7 @@ def convert(cryptocurrency, amount):
     }
     headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': '6871cd4a-229d-46dd-9407-b3e861085e0f',
+    'X-CMC_PRO_API_KEY': api_key,
     }
 
     session = Session()
