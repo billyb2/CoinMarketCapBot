@@ -20,4 +20,4 @@ sizeOfData = len(data)
 for data in data:
     sum += data['BAT']['price']
 
-print(sum/sizeOfData)
+print(sum)
